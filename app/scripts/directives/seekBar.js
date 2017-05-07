@@ -62,7 +62,7 @@
                     
                     var notifyOnChange = function(newValue) {
                          if (typeof scope.onChange === 'function') {
-                             attributes.onChange({value: newValue});
+                             scope.onChange({value: newValue});
                          }
                     };
 
