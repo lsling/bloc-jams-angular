@@ -58,8 +58,7 @@
       * @desc Current playback time (in seconds) of currently playing song
       * @type {Number}
       */
-      SongPlayer.currentTime = null;
-
+      SongPlayer.currentTime = null;     
          
      /**
      * @function playSong
@@ -79,8 +78,8 @@
      var stopSong = function(song) {
             currentBuzzObject.stop();
             song.playing = null;
-     };     
- 
+     };   
+         
      /**
      * @function songPlayer.play
      * @desc Plays selected song or plays the paused song
@@ -143,6 +142,24 @@
  +          playSong(song);
         }
      };
+       
+     /**
+     * @desc sets song volume
+     * @type {Number}
+     */
+     SongPlayer.volume = 80;     
+         
+     /**
+     * @function songPlayer.setVolume
+     * @desc Updates the volume on change
+     * @param {Number} volume
+     */    
+     SongPlayer.setVolume = function(volume) {
+         if (currentBuzzObject) {
+         currentBuzzObject.setVolume(volume);
+         }
+     };
+ 
          
      /**
      * @function setCurrentTime
